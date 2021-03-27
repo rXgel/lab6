@@ -33,12 +33,25 @@ function addProjectDetails(e) {
 
 function readJsonData(result){
 	console.log(result);
-      var projectHTML='<p>'+result['title']+'</p>'+
+      var projectHTML='<div id="id">' + '<p>'+result['title']+'</p>'+
 	                  '<p><small>'+result['date']+'</small></p>'+
 	                  '<img src="'+result['image']+'" class="detailsImage">'+
-	                  '<p>'+result['summary']+'</p></a>';
-	  var idNum = "project" + result['id'];
-	$('#project1 .details').html(projectHTML);
+	                  '<p>'+result['summary']+'</p></div>';
+	  var idNum = result['id'];
+	  //how to select project[id]
+
+	var containingProject = "#project" + idNum + " div.details";
+	var description = $(containingProject).find("div");
+	if (description.length == 0) {
+       $(containingProject).append(projectHTML);
+   		}
+    else{
+       $(containingProject).fadeToggle();
+ //        description.remove();
+	}
+
+	//$(containingProject).html(projectHTML);
+	//$("#project" + idNum + " div.details").fadeToggle();
 	//add more details
 
 }
