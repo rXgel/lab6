@@ -43,7 +43,7 @@ function readJsonData(result){
 	var containingProject = "#project" + idNum + " div.details";
 	var description = $(containingProject).find("div");
 	if (description.length == 0) {
-       $(containingProject).append(projectHTML);
+       $(containingProject).html(projectHTML);
    		}
     else{
        $(containingProject).fadeToggle();
