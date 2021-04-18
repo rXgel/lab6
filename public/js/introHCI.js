@@ -28,7 +28,7 @@ function addProjectDetails(e) {
 
 	console.log("User clicked on project " + idNumber);
 
-	$.get("http://localhost:3000/project/" + idNumber, readJsonData);
+	$.get("https://cogs120lab66.herokuapp.com/project/" + idNumber, readJsonData);
 }
 
 function readJsonData(result){
